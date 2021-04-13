@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="372.0" prefWidth="800.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="autoservice.controller.PrijavaController">
+    <stylesheets>
+        <URL value="@/libs/autoservice.css" />
+    </stylesheets>
+   <children>
+      <ImageView fitHeight="500.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../slike/login.jpg" />
+         </image>
+      </ImageView>
+      <VBox layoutX="424.0" prefHeight="375.0" prefWidth="376.0">
+         <children>
+            <VBox alignment="CENTER_RIGHT" prefHeight="67.0" prefWidth="376.0">
+               <children>
+                  <FontAwesomeIcon fill="WHITE" iconName="CLOSE" onMouseClicked="#zatvori" size="2em">
+                     <VBox.margin>
+                        <Insets right="10.0" />
+                     </VBox.margin>
+                  </FontAwesomeIcon>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="375.0" prefWidth="380.0">
+               <children>
+                  <Label text="Prijavite se u sustav" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="korisnicko_ime_txt" promptText="Korisničko ime">
+                     <VBox.margin>
+                        <Insets left="50.0" right="50.0" top="30.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <PasswordField fx:id="lozinka_txt" promptText="Lozinka">
+                     <VBox.margin>
+                        <Insets left="50.0" right="50.0" top="20.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </PasswordField>
+                  <JFXButton fx:id="prijava_btn" onMouseClicked="#prijavi" prefHeight="40.0" prefWidth="363.0" styleClass="prijava_btn" stylesheets="@../../libs/autoservice.css" text="Prijava">
+                     <VBox.margin>
+                        <Insets left="50.0" right="50.0" top="30.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <Label fx:id="greska_lbl" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+      <ImageView fitHeight="40.0" fitWidth="48.0" onMouseClicked="#otvori_administracija_prijava" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <image>
+            <Image url="@../../slike/admin-with-cogwheels.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="autoservice.controller.Spremi_evidencijuController">
+   <stylesheets>
+      <URL value="@/libs/autoservice.css" />
+   </stylesheets>
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../slike/pozadina.jpg" />
+         </image>
+      </ImageView>
+      <VBox prefHeight="600.0" prefWidth="800.0">
+         <children>
+            <HBox alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="800.0">
+               <children>
+                  <FontAwesomeIcon fill="WHITE" iconName="CLOSE" onMouseClicked="#zatvori" size="2em">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </FontAwesomeIcon>
+               </children>
+            </HBox>
+            <HBox prefHeight="568.0" prefWidth="800.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="567.0" prefWidth="808.0">
+                     <children>
+                        <TableView fx:id="dijelovi_table" maxWidth="700.0" prefHeight="260.0" prefWidth="341.0">
+                           <columns>
+                              <TableColumn fx:id="naziv_column" prefWidth="326.0" text="Naziv" />
+                              <TableColumn fx:id="cijena_column" prefWidth="148.0" text="Cijena" />
+                           </columns>
+                           <VBox.margin>
+                              <Insets left="5.0" right="5.0" top="20.0" />
+                           </VBox.margin>
+                        </TableView>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <JFXButton onMouseClicked="#nazad" prefHeight="40.0" prefWidth="200.0" styleClass="nazad_btn" stylesheets="@../../libs/autoservice.css" text="Nazad" />
+                              <JFXButton onMouseClicked="#spremi" prefHeight="40.0" prefWidth="200.0" styleClass="prijava_btn" stylesheets="@../../libs/autoservice.css" text="Spremi">
+                                 <HBox.margin>
+                                    <Insets left="100.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" top="30.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="567.0" prefWidth="618.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="49.0" prefWidth="305.0">
+                           <children>
+                              <Label text="Automobil:" textFill="WHITE">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="automobil_txt" textFill="WHITE">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="49.0" prefWidth="305.0">
+                           <children>
+                              <Label text="Broj šasije:" textFill="WHITE">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="broj_sasije_txt" textFill="WHITE">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <ComboBox fx:id="radnih_sati_combo" onAction="#izracunaj" prefHeight="35.0" prefWidth="251.0" promptText="Odaberite broj utošenih radnih sati" />
+                        <HBox alignment="CENTER" prefHeight="49.0" prefWidth="305.0">
+                           <children>
+                              <Label text="Cijena rada:" textFill="WHITE">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="cijena_rada_txt" textFill="WHITE">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="207.0" prefHeight="49.0" prefWidth="305.0">
+                           <children>
+                              <Label text="Cijena dijelova:" textFill="WHITE">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="cijena_dijelova_txt" textFill="WHITE">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="256.0" prefHeight="49.0" prefWidth="305.0">
+                           <children>
+                              <Label text="Ukupna cijena:" textFill="RED">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="ukupna_cijena_txt" textFill="RED">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

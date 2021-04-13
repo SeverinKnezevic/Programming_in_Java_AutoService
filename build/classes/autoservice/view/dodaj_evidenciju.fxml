@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="autoservice.controller.Dodaj_evidencijuController">
+   <stylesheets>
+      <URL value="@/libs/autoservice.css" />
+   </stylesheets>
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../slike/pozadina.jpg" />
+         </image>
+      </ImageView>
+      <VBox prefHeight="600.0" prefWidth="800.0">
+         <children>
+            <HBox alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="800.0">
+               <children>
+                  <FontAwesomeIcon fill="WHITE" iconName="CLOSE" onMouseClicked="#zatvori" size="2em">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </FontAwesomeIcon>
+               </children>
+            </HBox>
+            <HBox prefHeight="568.0" prefWidth="800.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="567.0" prefWidth="808.0">
+                     <children>
+                        <TextField fx:id="pretraga_txt" maxWidth="400.0" onKeyReleased="#pretraga" prefWidth="200.0" promptText="Pretražite automobil">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TableView fx:id="automobili_table" maxWidth="700.0" onMouseClicked="#odaberi" prefHeight="366.0" prefWidth="700.0">
+                          <columns>
+                            <TableColumn fx:id="broj_sasije_column" prefWidth="247.0" text="Broj šasije" />
+                            <TableColumn fx:id="proizvodjac_column" prefWidth="169.0" text="Proizvođač" />
+                              <TableColumn fx:id="model_column" prefWidth="177.0" text="Model" />
+                              <TableColumn fx:id="godiste_column" prefWidth="93.0" text="Godište" />
+                          </columns>
+                           <VBox.margin>
+                              <Insets left="5.0" right="5.0" top="20.0" />
+                           </VBox.margin>
+                        </TableView>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <JFXButton onMouseClicked="#nazad" prefHeight="40.0" prefWidth="200.0" styleClass="nazad_btn" stylesheets="@../../libs/autoservice.css" text="Nazad" />
+                              <JFXButton onMouseClicked="#nastavi" prefHeight="40.0" prefWidth="200.0" styleClass="prijava_btn" stylesheets="@../../libs/autoservice.css" text="Dalje">
+                                 <HBox.margin>
+                                    <Insets left="100.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

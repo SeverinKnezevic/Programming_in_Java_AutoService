@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="autoservice.controller.Pregled_zaposlenikaController">
+   <stylesheets>
+      <URL value="@/libs/autoservice.css" />
+   </stylesheets>
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../slike/pozadina.jpg" />
+         </image>
+      </ImageView>
+      <VBox prefHeight="600.0" prefWidth="800.0">
+         <children>
+            <HBox alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="800.0">
+               <children>
+                  <FontAwesomeIcon fill="WHITE" iconName="CLOSE" onMouseClicked="#zatvori" size="2em">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </FontAwesomeIcon>
+               </children>
+            </HBox>
+            <HBox prefHeight="568.0" prefWidth="800.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="567.0" prefWidth="808.0">
+                     <children>
+                        <HBox prefHeight="427.0" prefWidth="800.0">
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="400.0">
+                                 <children>
+                                    <TableView fx:id="zaposlenici_table" onMouseClicked="#postavi" prefHeight="419.0" prefWidth="400.0">
+                                      <columns>
+                                        <TableColumn fx:id="ime_column" prefWidth="125.0" text="Ime" />
+                                        <TableColumn fx:id="prezime_column" prefWidth="98.0" text="Prezime" />
+                                          <TableColumn fx:id="korisnicko_ime_column" prefWidth="149.0" text="Korisničko ime" />
+                                      </columns>
+                                       <VBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </VBox.margin>
+                                    </TableView>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="400.0">
+                                 <children>
+                                    <TextField fx:id="ime_txt" promptText="Ime zaposlenika">
+                                       <VBox.margin>
+                                          <Insets left="30.0" right="30.0" top="30.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="prezime_txt" layoutX="40.0" layoutY="40.0" promptText="Prezime zaposlenika">
+                                       <VBox.margin>
+                                          <Insets left="30.0" right="30.0" top="20.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="korisnicko_ime_txt" layoutX="40.0" layoutY="40.0" promptText="Korisničko ime zaposlenika">
+                                       <VBox.margin>
+                                          <Insets left="30.0" right="30.0" top="20.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <PasswordField fx:id="lozinka_txt" promptText="Lozinka zaposlenika">
+                                       <VBox.margin>
+                                          <Insets left="30.0" right="30.0" top="20.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </PasswordField>
+                                    <JFXButton onMouseClicked="#spremi" prefHeight="40.0" prefWidth="359.0" styleClass="prijava_btn" stylesheets="@../../libs/autoservice.css" text="Spremi promjene">
+                                       <VBox.margin>
+                                          <Insets left="30.0" right="30.0" top="20.0" />
+                                       </VBox.margin>
+                                    </JFXButton>
+                                    <Label fx:id="greska_lbl" textFill="RED">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXButton layoutX="40.0" layoutY="309.0" onMouseClicked="#brisi" prefHeight="40.0" prefWidth="359.0" styleClass="nazad_btn" stylesheets="@../../libs/autoservice.css" text="Obriši" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <JFXButton onMouseClicked="#nazad" prefHeight="40.0" prefWidth="200.0" styleClass="nazad_btn" stylesheets="@../../libs/autoservice.css" text="Nazad">
+                                 <HBox.margin>
+                                    <Insets left="30.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="autoservice.controller.Uredi_automobilController">
+   <stylesheets>
+      <URL value="@/libs/autoservice.css" />
+   </stylesheets>
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../slike/pozadina.jpg" />
+         </image>
+      </ImageView>
+      <VBox prefHeight="600.0" prefWidth="800.0">
+         <children>
+            <HBox alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="800.0">
+               <children>
+                  <FontAwesomeIcon fill="WHITE" iconName="CLOSE" onMouseClicked="#zatvori" size="2em">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </FontAwesomeIcon>
+               </children>
+            </HBox>
+            <VBox alignment="CENTER" prefHeight="566.0" prefWidth="800.0">
+               <children>
+                  <TextField fx:id="sasija_txt" promptText="Unesite broj šasije">
+                     <VBox.margin>
+                        <Insets left="250.0" right="250.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <ComboBox fx:id="proizvodjac_combo" onHiding="#dohvati_modele" prefHeight="25.0" prefWidth="326.0" promptText="Odaberite proizvođača" style="-fx-font-size: 14px;">
+                     <VBox.margin>
+                        <Insets left="250.0" right="250.0" top="20.0" />
+                     </VBox.margin>
+                  </ComboBox>
+                  <ComboBox fx:id="model_combo" prefHeight="25.0" prefWidth="331.0" promptText="Odaberite model" style="-fx-font-size: 14px;">
+                     <VBox.margin>
+                        <Insets left="250.0" right="250.0" top="20.0" />
+                     </VBox.margin>
+                  </ComboBox>
+                  <Label fx:id="greska_lbl" textAlignment="CENTER" textFill="RED">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <JFXButton onMouseClicked="#nazad" prefHeight="40.0" prefWidth="200.0" styleClass="nazad_btn" stylesheets="@../../libs/autoservice.css" text="Nazad" />
+                        <JFXButton onMouseClicked="#spremi" prefHeight="40.0" prefWidth="200.0" styleClass="prijava_btn" stylesheets="@../../libs/autoservice.css" text="Spremi promjene">
+                           <HBox.margin>
+                              <Insets left="100.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

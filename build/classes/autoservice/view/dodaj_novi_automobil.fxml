@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="autoservice.controller.Dodaj_novi_automobilController">
+   <stylesheets>
+      <URL value="@/libs/autoservice.css" />
+   </stylesheets>
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../slike/pozadina.jpg" />
+         </image>
+      </ImageView>
+      <VBox prefHeight="600.0" prefWidth="800.0">
+         <children>
+            <HBox alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="800.0">
+               <children>
+                  <FontAwesomeIcon fill="WHITE" iconName="CLOSE" onMouseClicked="#zatvori" size="2em">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </FontAwesomeIcon>
+               </children>
+            </HBox>
+            <HBox prefHeight="568.0" prefWidth="800.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="567.0" prefWidth="808.0">
+                     <children>
+                        <HBox prefHeight="427.0" prefWidth="800.0">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="400.0">
+                                 <children>
+                                    <Label text="Dodaj proizvođača" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="naziv_proizvodjaca_txt" promptText="Unesite naziv proizvođača">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="20.0" right="20.0" top="30.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <JFXButton onMouseClicked="#dodaj_proizvodjaca" prefHeight="40.0" prefWidth="360.0" styleClass="prijava_btn" stylesheets="@../../libs/autoservice.css" text="Dodaj proizvođača">
+                                       <VBox.margin>
+                                          <Insets left="20.0" right="20.0" top="30.0" />
+                                       </VBox.margin>
+                                    </JFXButton>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="400.0">
+                                 <children>
+                                    <Label text="Dodaj model" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="naziv_modela_txt" promptText="Unesite naziv modela">
+                                       <VBox.margin>
+                                          <Insets left="20.0" right="20.0" top="30.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="godiste_txt" promptText="Unesite godište">
+                                       <VBox.margin>
+                                          <Insets left="20.0" right="20.0" top="20.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <ComboBox fx:id="proizvodjac_combo" prefHeight="25.0" prefWidth="415.0" promptText="Odaberite proizvođača" style="-fx-font-size: 14px;">
+                                       <VBox.margin>
+                                          <Insets left="20.0" right="20.0" top="20.0" />
+                                       </VBox.margin>
+                                    </ComboBox>
+                                    <JFXButton onMouseClicked="#dodaj_model" prefHeight="40.0" prefWidth="360.0" styleClass="prijava_btn" stylesheets="@../../libs/autoservice.css" text="Dodaj model">
+                                       <VBox.margin>
+                                          <Insets top="20.0" />
+                                       </VBox.margin>
+                                    </JFXButton>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="40.0" prefWidth="800.0">
+                           <children>
+                              <Label fx:id="greska_lbl" textFill="RED">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <JFXButton onMouseClicked="#nazad" prefHeight="40.0" prefWidth="200.0" styleClass="nazad_btn" stylesheets="@../../libs/autoservice.css" text="Nazad">
+                                 <HBox.margin>
+                                    <Insets left="30.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
